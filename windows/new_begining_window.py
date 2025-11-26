@@ -9,7 +9,9 @@ class NewBeginingWindow(Window):
         self.default_interlocutor = "chief"
 
     def print_dialog_phrase(self, text, who, is_new_line=False):
-        print(f"{"\n" if is_new_line else ""}[{who}] {text}")
+        if is_new_line:
+            print()
+        print(f"[{who}] {text}")
 
     def render_window(self, wm):
         clear()

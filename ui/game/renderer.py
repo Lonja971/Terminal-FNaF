@@ -62,7 +62,7 @@ class GameRenderer(Window):
             power = int(self.state.power)
             power_usage = self.state.power_usage
 
-        line = f"|{" "*self.left_padding}{self.translator.t('night')}: {self.current_night} | {hours}:{minutes}   {self.translator.t('energy')}: {power}% :{'[]' * power_usage['items']}"
+        line = f"|{' '*self.left_padding}{self.translator.t('night')}: {self.current_night} | {hours}:{minutes}   {self.translator.t('energy')}: {power}% :{'[]' * power_usage['items']}"
         line = line.ljust(99) + "|"
 
         self.stdscr.attron(curses.color_pair(1))

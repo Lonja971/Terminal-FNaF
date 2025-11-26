@@ -111,7 +111,7 @@ class Animatronic:
                 self.current_position_index = office_position_index
                 self.is_attacking = True
                 debug_log(f"{self.name} АТАКУЄ")
-                self.add_event_comment(self.name, f"[{self.name}] {self.translator.t("angry_freddy_sounds")}", 4)
+                self.add_event_comment(self.name, f"[{self.name}] {self.translator.t('angry_freddy_sounds')}", 4)
             self.time_before_attack += 0.5
 
         #---ФОКСІ---
@@ -130,7 +130,7 @@ class Animatronic:
                 if self.time_before_attack >= self.current_attack_delay:
                     debug_log(f"{self.name} АТАКУЄ")
                     self.is_attacking = True
-                    self.add_event_comment(self.name, f"[{self.name}] {self.translator.t("angry_foxy_sounds")}", 3)
+                    self.add_event_comment(self.name, f"[{self.name}] {self.translator.t('angry_foxy_sounds')}", 3)
                     self.reduce_power(self.attack_power_cost)
                 else:
                     self.time_before_attack += self.time_before_attack_tick
@@ -152,11 +152,11 @@ class Animatronic:
             if next_positions:
                 old_position_index = self.current_position_index
                 self.current_position_index = random.choice(next_positions)
-                debug_log(f"{self.name} перейшов у позицію {LOCATION[self.current_position_index]["name"]}")
+                debug_log(f"{self.name} перейшов у позицію {LOCATION[self.current_position_index]['name']}")
                 if self.attack_trigger["type"] == "laugh":
                     self.laugh_number += 1
-                    debug_log(f"{self.name} Сміється [{self.laugh_number}] {LOCATION[self.current_position_index]["name"]}")
-                    self.add_event_comment(self.name, f"[{self.name}] {self.translator.t("ho_ho_ho")}", 4)
+                    debug_log(f"{self.name} Сміється [{self.laugh_number}] {LOCATION[self.current_position_index]['name']}")
+                    self.add_event_comment(self.name, f"[{self.name}] {self.translator.t('ho_ho_ho')}", 4)
 
                 self.time_in_position = 0
                 self.last_position_index = old_position_index

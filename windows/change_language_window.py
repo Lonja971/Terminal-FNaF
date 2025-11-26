@@ -42,7 +42,7 @@ class ChangeLanquageWindow(Window):
             label = self.get_lang_label(lang_code)
             menu.append((label, None, lambda wm=wm, lc=lang_code: (self.apply_language(wm, lc), wm.pop())))
 
-        print(f"{wm.translator.t("choose_lang")}\n")
+        print(f"{wm.translator.t('choose_lang')}\n")
         menu_actions = render_menu(menu)
 
         while True:
